@@ -20,6 +20,7 @@ export default function Button(clickButton) {
     const { onPressCorgiEscapeStart, corgiEscapeStartBtn = 'Start' } = clickButton;
     const { onPressTreatFallsTutorial, treatFallsTutorialBtn = 'Tutorial' } = clickButton;
     const { onPressTreatFallsStart, treatFallsStartBtn = 'Start' } = clickButton;
+    const { onPresstest, testStartBtn = 'TEST' } = clickButton;
 
     //button to go back to index.js aka the first landing screen
     const navigation = useNavigation();
@@ -60,6 +61,11 @@ export default function Button(clickButton) {
             <Link href="/gamehub/corgi_escape" asChild>
                 <Pressable style={styles.button} onPressCorgiEscapeStart={onPressCorgiEscapeStart}>
                     <Text style={styles.text}>{corgiEscapeStartBtn}</Text>
+                </Pressable>
+            </Link>
+            <Link href="/gamehub/test" asChild>
+                <Pressable style={styles.button} onPressCorgiEscapeStart={onPresstest}>
+                    <Text style={styles.text}>{testStartBtn}</Text>
                 </Pressable>
             </Link>
         </View>
