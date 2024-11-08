@@ -16,10 +16,12 @@ export default function Button(clickButton) {
       }
 
     {/*Buttons for screens*/}
-    const { onPressIndex, indexScreenBtn = 'Index.Js' } = clickButton;
+    const { onPressGamehub, gamehubScreenBtn = 'gamehub/gamehub_mainscreen' } = clickButton;
 
   return (
+    
     <View style={styles.container}> 
+
       <Text style={styles.text}>
       HOW TO PLAY CORGI ESCAPE:
       </Text>
@@ -33,6 +35,14 @@ export default function Button(clickButton) {
       You only have 3 lives, good luck! </Text>
 
       <Image style={styles.tutorialimage} source={require('../../assets/corgiescapetutorial.png')} resizeMode="contain"></Image>
+    
+      <Link href="gamehub/gamehub_mainscreen" asChild>
+                <Pressable style={styles.gamehubButton} onPressGamehub={onPressGamehub}>
+                    <Text style={styles.text}>Back to Gamehub</Text>
+                </Pressable>
+            </Link>
+    
+    
     </View>
 
   );
@@ -45,14 +55,6 @@ container: {
     alignItems: 'center',          // Centers items horizontally   
   backgroundColor: '#A7C7E7',
 },
-indexButton:{
-  backgroundColor: '#FAC898',
-  width: 200, 
-  padding: 10,
-  borderRadius: 5,
-  marginVertical: 10, 
-  alignItems: 'center'
-},
 text: {
   color: '#000000',
   fontSize: 16,
@@ -62,7 +64,14 @@ text: {
   marginBottom: 20,
 },
 tutorialimage: {
-    width: 500,     // Set the width of the image
-    height: 500,
+    width: 450,     // Set the width of the image
+    height: 450,
+},
+gamehubButton:{
+        width: 175, // Set a fixed width or use maxWidth
+        backgroundColor: '#f7e7b4',
+        borderRadius: 5,
+        marginVertical: 10, 
+        alignItems: 'center'
 },
 });
